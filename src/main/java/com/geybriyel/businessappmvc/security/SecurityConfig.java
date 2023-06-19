@@ -34,6 +34,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(configurer -> configurer
+                        .requestMatchers("/").hasRole("EMPLOYEE")
+                        .requestMatchers("/managers/**").hasRole("MANAGER")
                         .anyRequest()
                         .authenticated()
                 )
