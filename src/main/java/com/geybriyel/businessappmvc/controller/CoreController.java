@@ -14,4 +14,9 @@ public class CoreController {
     public String showManagerPage() {
         return "manager/home";
     }
+
+    @GetMapping("/systems")
+    public String showSystemsPage() {
+        return "system/home";
+    }
 }
