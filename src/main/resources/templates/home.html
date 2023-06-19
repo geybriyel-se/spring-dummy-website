@@ -6,6 +6,7 @@
 </head>
 <body>
     <h3>Hello, <span sec:authentication="principal.username"></span></h3>
+    You have the following roles: <span sec:authentication="principal.authorities"></span>
     <h1>Welcome to Company-Name</h1>
     <hr>
     <p>
