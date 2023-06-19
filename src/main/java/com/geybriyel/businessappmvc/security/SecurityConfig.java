@@ -36,6 +36,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests(configurer -> configurer
                         .requestMatchers("/").hasRole("EMPLOYEE")
                         .requestMatchers("/managers/**").hasRole("MANAGER")
+                        .requestMatchers("/systems/**").hasRole("ADMIN")
                         .anyRequest()
                         .authenticated()
                 )
