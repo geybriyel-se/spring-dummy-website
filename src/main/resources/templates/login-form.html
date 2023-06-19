@@ -10,6 +10,9 @@
         <div th:if="${param.error}">
             Invalid username and password.
         </div>
+        <div th:if="${param.logout}">
+            You have successfully logged out.
+        </div>
         <div>
             <div>
                 <label for="username">Username</label>
