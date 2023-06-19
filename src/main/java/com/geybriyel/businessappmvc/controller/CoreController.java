@@ -9,4 +9,9 @@ public class CoreController {
     public String showHome() {
         return "home";
     }
+
+    @GetMapping("/managers")
+    public String showManagerPage() {
+        return "manager/home";
+    }
 }
