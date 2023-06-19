@@ -35,12 +35,16 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(configurer -> configurer
                         .anyRequest()
-                        .authenticated())
+                        .authenticated()
+                )
                 .formLogin(form -> form
                         .loginPage("/loginPage")
                         .loginProcessingUrl("/authenticateUser")
-                        .permitAll())
+                        .permitAll()
+                )
+                .logout(logout -> logout.permitAll())
         ;
+
         return httpSecurity.build();
     }
 }
